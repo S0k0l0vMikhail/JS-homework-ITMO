@@ -15,15 +15,14 @@ console.log(res);
 console.log("Задача 2");
 let sqPlot = '10соток';
 let sqGarden;
-let trans;
 
 sqGarden = 15*25;
 console.log("Площадь грядки " + sqGarden  + " м2");
 
-trans = parseInt(sqPlot)*100; // переводим сотки в метры2
-sqPlot = trans;
+sqPlot = parseInt(sqPlot)*100; // переводим сотки в метры2
 
-let rem = sqPlot - sqGarden;
+
+let rem = sqPlot % sqGarden;
 console.log("осталось незанято "+ rem + " м2");
 
 //задача 3
@@ -40,13 +39,26 @@ console.log("Площадь пончика: " + bagel + " см2");
 
 //Задача 4
 console.log("Задача 4");
-let x = 100;
-let y = -500;
+let x = 500;
+let y = 100;
+let z;
+console.log("x = " + x);
+console.log("y = " + y);
 
-let redefine = (x < y) ? "X МЕНЬШЕ Y" : (Math.abs(x) > Math.abs(y))? "X БОЛЬШЕ Y" : "Y БОЛЬШЕ X";
+let redefine = (x < y) ?(x=x,y=y):(z=x, x=y, y=z);
+console.log("Переопределили");
+console.log("x = " + x);
+console.log("y = " + y);
 
-console.log(redefine);
-
+console.log("сбособ 2");
+let a = 500;
+let b = 100;
+console.log("a = " + a);
+console.log("b = " + b);
+ redefine = (a < b) ?(a=a,b=b):(b=a+b,a=b-a,b=b-a);
+ console.log("Переопределили");
+ console.log("a = " + a);
+ console.log("b = " + b);
 //Задача 5
 console.log("Задача 5");
 
