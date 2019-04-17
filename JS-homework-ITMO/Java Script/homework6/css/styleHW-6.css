@@ -1,0 +1,38 @@
+#goods{
+  display: flex;
+}
+.divstyle{
+  border: 2px solid #2b2c42;
+  display: inline-block;
+	height: 300px;
+	width: 300px;
+	margin:10px;
+}
+.titlestyle{
+  font-family: sans-serif;
+  text-align: center;
+
+}
+.pstyle{
+  color: #ff6b00;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;
+  padding:auto;
+  margin: 0 auto;
+}
+.imgstyle {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+  width: 200px;
+}
+
+.divstyle:hover .imgstyle {
+  opacity: 0.3;
+}
