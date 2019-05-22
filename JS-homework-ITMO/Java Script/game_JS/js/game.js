@@ -6,13 +6,12 @@ canvas.width = 600;
 canvas.height = 600;
 
 
-let dogs = [];
-dogs.push({
+let dogs = {
   x: 100,
   y: 420,
   dx: 0,
   dy: 0
-});
+};
 let dogImg = new Image(); //собака
 dogImg.src = "img/dog.png";
 
@@ -66,7 +65,7 @@ function update() {
     if (cats[i].b >= 500) cats.splice(i, 1);
     //проверим котов  на столкновение с собакой
     for (j in dogs) {
-      if (Math.abs(cats[i].a + 50 - dogs[j].x - 50) < 100 && Math.abs(cats[i].b - dogs[j].y) < 50) {
+      if (Math.abs(cats[i].a + 50 - dogs.x - 50) < 100 && Math.abs(cats[i].b - dogs.y) < 50) {
         //произошло столкновение
 
         //помечаем кота на удаление
@@ -78,17 +77,17 @@ function update() {
     if (cats[i].del == 1) cats.splice(i, 1);
   }
   //границы для собаки
-  if (dogs[i].x >= 500) dogs[i].x = 500;
-  if (dogs[i].x <= 0) dogs[i].x = 0;
-  if (dogs[i].y >= 500) dogs[i].y = 500;
-  if (dogs[i].y <= 0) dogs[i].y = 0;
+  if (dogs.x >= 500) dogs.x = 500;
+  if (dogs.x <= 0) dogs.x = 0;
+  if (dogs.y >= 500) dogs.y = 500;
+  if (dogs.y <= 0) dogs.y = 0;
 
 
 };
 
 function render() { // отображение на экране
   context.drawImage(fonImg, 0, 0, 600, 600); //фон
-  context.drawImage(dogImg, dogs[i].x, dogs[i].y, 100, 100); //пес
+  context.drawImage(dogImg, dogs.x, dogs.y, 100, 100); //пес
   for (i in cats) context.drawImage(catImg, cats[i].a, cats[i].b, 100, 100); //коты
 };
 
@@ -104,12 +103,12 @@ function movePic(event) {
   console.log(event);
 
   if (event.code === "KeyD") {
-    dogs[i].x += 20;
+    dogs.x += 20;
   } else if (event.code === "KeyA") {
-    dogs[i].x -= 20;
+    dogs.x -= 20;
   } else if (event.code === "KeyW") {
-    dogs[i].y -= 20;
+    dogs.y -= 20;
   } else if (event.code === "KeyS") {
-    dogs[i].y += 20;
+    dogs.y += 20;
   }
 }
